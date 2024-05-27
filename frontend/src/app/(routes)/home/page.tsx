@@ -10,7 +10,6 @@ import { useState } from "react";
 
 export default function main() {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isLoggingIn, setIsLoggingIn] = useState(false);
 
     const handleLoginClick = () => {
@@ -23,11 +22,6 @@ export default function main() {
             setIsLoggingIn(false);
             
         }
-    };
-
-    const handleLogin = () => {
-        setIsLoggedIn(true);
-        setIsLoggingIn(false);
     };
 
 
@@ -58,10 +52,7 @@ export default function main() {
             </Box>
             <Login /> */}
             <button onClick={handleLoginClick}>yobabes</button>
-
-            {/* {!isLoggedIn && !isLoggingIn && <Home onLoginClick={handleLoginClick} />} */}
-            {!isLoggedIn && isLoggingIn && <Login onLogin={handleLogin} />}
-            {isLoggedIn && <h1>Welcome back, User!</h1>}
+            {isLoggingIn && <Login/>}
         </Container>
     )
 }

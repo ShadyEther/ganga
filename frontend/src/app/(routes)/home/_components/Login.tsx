@@ -35,7 +35,7 @@ function Copyright(props: any) {
 const defaultTheme = theme;
 
 
-export default function SignIn({onLogin}:any) {
+export default function SignIn() {
     const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -46,7 +46,7 @@ export default function SignIn({onLogin}:any) {
       email: data.get('email'),
       password: data.get('password'),
     });
-    onLogin();
+    // onLogin();
   };
 
 
