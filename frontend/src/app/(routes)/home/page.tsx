@@ -7,6 +7,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import Login from "./_components/Login";
 import { useState } from "react";
+import Header from "@/components/ui/Header/Header";
 
 export default function main() {
 
@@ -51,8 +52,26 @@ export default function main() {
                 <Typography variant="h1">hehe</Typography>
             </Box>
             <Login /> */}
+            <Header>
+            </Header>
+            <Box style={{paddingTop:`40px`}}>
             <button onClick={handleLoginClick}>yobabes</button>
             {isLoggingIn && <Login/>}
+            <div>
+                yobababies hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+                hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe hehe 
+            </div>
+            
+            </Box>
         </Container>
     )
 }
