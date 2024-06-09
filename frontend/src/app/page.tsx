@@ -114,6 +114,10 @@ import Image from "next/image";
 
 export default function Home(){
   return (
+    <>
+    <br></br>
     <a href="/home">Continue to main site</a>
+
+    </>
   )
 }
