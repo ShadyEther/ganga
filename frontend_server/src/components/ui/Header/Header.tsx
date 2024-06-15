@@ -1,95 +1,76 @@
-"use client"
+'use client'
 
-
-
-import React, { useEffect, useState } from 'react'
-import styles from './Header.module.css'
-import ResponsiveAppBar from './ResponsiveAppBar';
-import { AppBar, Avatar, Box, Button, Toolbar, Typography, alpha, styled } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import InputBase from '@mui/material/InputBase';
-import Search from './SearchBar';
+import { AppBar, Avatar, Badge, Box, Button, IconButton, Modal, TextField, Toolbar, Typography } from '@mui/material'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import React, { useState } from 'react'
+import Login from './_auth/Auth';
+import Auth from './_auth/Auth';
+
+
 
 
 
 
 
 function Header() {
-  // const [showHeader, setShowHeader] = useState(true);
-  // let lastScrollPos = 0;
-  // // const [lastScrollPos, setLastScrollPos] = useState(0);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollTopPos = window.pageYOffset || document.documentElement.scrollTop;
-
-  //     if (scrollTopPos > lastScrollPos) {
-  //       setShowHeader(false);//hide the header when scroling down
-  //     }
-  //     else {
-  //       setShowHeader(true);
-  //     }
-  //     lastScrollPos = scrollTopPos <= 0 ? 0 : scrollTopPos;//last scrollPos varies from 0 to postiive number never negative
-  //     // setLastScrollPos(scrollTopPos <= 0 ? 0 : scrollTopPos);
-  //   };
-
-  //   // console.log(window.addEventListener('scroll',handleScroll));
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
+    const [loggedIn, setLoggedIn] = useState<boolean>(false);
+    const [authModalToggle, setAuthModalToggle] = useState<boolean>(false);
 
 
+    function toggleAuth() {
+        if (loggedIn) {
+            return (
+                <><Avatar /></>
+            )
+        }
+        else {
+            return (
+                <Button
+                    variant='contained'
+                    onClick={() => { setAuthModalToggle(true) }}
+                >
+                    Login
+                </Button>
+            )
+        }
+    }
 
+    const handleAuthModalClose = () => setAuthModalToggle(false)
 
-  return (
-    <>
-      {/* <div className={`${styles.header} ${showHeader ? styles.show : styles.hide}`}>
-        <ResponsiveAppBar></ResponsiveAppBar>
-      </div> */}
-      <AppBar>
-        <Toolbar>
-          <Typography
-            component="a"
-            href="./home"
-          >
-            Ganga
-          </Typography>
-          <Box
-            width={'100%'}
-            alignItems={'center'}
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              // background:"red"
-              border: 'solid',
+    return (
+        <AppBar
 
-            }}
-          >
-            {/* <SearchIcon/> */}
-            <Box
-              width={'50%'}>
+        >
+            <Toolbar>
+                <Typography>Granga</Typography>
+                <TextField label='search' />
+                <Badge badgeContent={'99+'}>
+                    <ShoppingCartIcon />
+                </Badge>
+                {toggleAuth()}
+            </Toolbar>
 
-              <Search />
-            </Box>
-            <ShoppingCartIcon />
-            <Avatar />
-            <Button>
-              
-            </Button>
-
-
-
-          </Box>
-
-        </Toolbar>
-
-      </AppBar>
-
-
-    </>
-
-  )
+            <Modal
+                open={authModalToggle}
+                onClose={handleAuthModalClose}
+                sx={{
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center',
+                }}
+            >
+                <Box 
+                    sx={{
+                        bgcolor:'#60a372',
+                        borderRadius:'15px'
+                    }}
+                    >
+                    <Auth />
+                </Box>
+            </Modal>
+        </AppBar>
+    )
 }
 
 export default Header
