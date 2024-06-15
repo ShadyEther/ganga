@@ -1,0 +1,27 @@
+.header{
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: greenyellow;
+  color: black;
+  /* padding: 20px; */
+  transition: top 0.5s ease-in-out;
+  z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.show{
+top:0px;
+/* background: yellow; */
+}
+
+.hide{
+    top:-40px;
+    /* background: red; */
+}
+
+.hide:hover{
+    top:0px;
+}
