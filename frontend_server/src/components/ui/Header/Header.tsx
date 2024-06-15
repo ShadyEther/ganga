@@ -58,12 +58,12 @@ function Header() {
           <Box
             width={'100%'}
             alignItems={'center'}
-            sx={{ 
-              display: 'flex', 
+            sx={{
+              display: 'flex',
               justifyContent: 'space-between',
               // background:"red"
-              border:'solid',
-            
+              border: 'solid',
+
             }}
           >
             {/* <SearchIcon/> */}
@@ -74,6 +74,9 @@ function Header() {
             </Box>
             <ShoppingCartIcon />
             <Avatar />
+            <Button>
+              
+            </Button>
 
 
 
