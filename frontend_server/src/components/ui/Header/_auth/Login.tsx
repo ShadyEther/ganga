@@ -11,13 +11,30 @@ axios.defaults.withCredentials = false;
 const Login =  () => {
 
     const [showPassword, setShowPassword] = useState<boolean>(false);
-    const [csrfTokenValue, setCsrfToken] = useState('');
+    const [csrfTokenValue, setCsrfToken] = useState<string | null | undefined>('');
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
     const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
     };
+
+
+    useEffect(() => {
+
+        fetch("http://localhost:8000/api/csrf", 
+            {
+          credentials: "include",
+        })
+        .then((res) => {
+          let csrfToken= res.headers.get("X-CSRFToken")
+          console.log(res)
+          setCsrfToken(csrfToken);
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+      }, [])
 
     
 
@@ -29,24 +46,27 @@ const Login =  () => {
         const email = formData.get('email');
         const password = formData.get('password');
 
-        try {
-            const response = await axios.post('http://127.0.0.1:8000/api/login', 
-                { 
-                    email, 
-                    password 
-                },
-                // {
-                //     headers:{
-                //         'Cookie': 'csrftoken=PeDAjvMAIDMt6hF3iT1scfGKwCgh5C8j',
-                //         "Access-Control-Allow-Origin": "*"
-
-                //     }
-                // }
-            );
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
+        fetch("http://localhost:8000/api/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": csrfTokenValue,
+            },
+            credentials: "include",
+            body: JSON.stringify({email: email, password: password}),
+          })
+          .then(async response => {
+            if (!response.ok) {
+              throw new Error('Connecting problem');
+            }
+            
+            const data = await response.json(); 
+            console.log(data); 
+            
+          })
+          .catch((err) => {
+            console.log(err)
+          });
 
     }
 
@@ -121,3 +141,7 @@ const Login =  () => {
 }
 
 export default Login
+
+function setscrf(csrfToken: string | null) {
+    throw new Error("Function not implemented.");
+}
