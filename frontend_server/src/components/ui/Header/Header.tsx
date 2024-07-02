@@ -101,7 +101,7 @@ function Header() {
                     <Badge badgeContent={'99+'}>
                         <ShoppingCartIcon />
                     </Badge>
-                    <button onClick={handleClick} >{isButtonClicked?'true':'false'}</button>
+                    {/* <button onClick={handleClick} >{isButtonClicked?'true':'false'}</button> */}
                     {toggleAuth()}
                 </Toolbar>
 
