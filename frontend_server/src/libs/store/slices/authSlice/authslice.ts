@@ -20,11 +20,15 @@ const authslice = createSlice({
 
     toggleLoggedIn: (state)=>{
         state.loggedIn = true;
+    },
+    
+    toggleLoggedOut: (state)=>{
+      state.loggedIn = false;
     }
   },
 });
 
-export const { toggleButton,toggleLoggedIn } = authslice.actions;
+export const { toggleButton,toggleLoggedIn,toggleLoggedOut } = authslice.actions;
 
 export const selectButtonState = (state: { app: AppState }) => state.app.isButtonClicked;
 export const selectLoggedinState = (state: { app: AppState }) => state.app.loggedIn;
