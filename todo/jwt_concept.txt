@@ -1,0 +1,53 @@
+BACKEND
+============
+
+
+## Endpoints
+--------------
+
+./api/account/register
+
+    POST request: 
+
+    body={
+    "first_name":"SritamDutta",
+    "last_name":"Baby",
+    "username":"shadyether001",
+    "password":"babesyeah",
+    "re_password":"babesyeah"
+}
+
+
+
+./api/token/
+
+    POST request
+
+    body={
+    "username":"shadyether001",
+    "password":"babesyeah"
+}
+
+
+./api/account/user
+
+    GET request
+    cookies:-
+    Authorization:  "Bearer <Access Token here>"
+
+
+./api/token/refresh/
+
+    POST request
+
+    body={
+        "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyODg0MTUwNCwiaWF0IjoxNzI4NzU1MTA0LCJqdGkiOiIzYmUzODEyMTVmZjI0Zjk4YjY0NDdjMGExMmVjMDU3ZCIsInVzZXJfaWQiOjN9.swU1812c0-AfyFpWsz2Dnud9qUhClbgOZv2pfJ6HHQY"
+}
+
+
+
+## Concept
+------------
+
+the access token is the jwt token, it is used to suthorize every requests made to different endoints if the given header is correct in the backend then its okay else it is different
+

@@ -1,0 +1,36 @@
+
+
+1.  store jwt access token and refresh token in cookie as secure and http only
+2.  see how cookie from next/headers work...!
+3.  auth flow..
+
+        Login 
+        ------------------
+        -get login creds from client.. send to nextjs for auth check..
+        -nextjs takes this ... creds and sends them to backend.. 
+        -backend gives token which is returned to nextjs ..
+        -nextjs sends a response to the cleint.. which sets the cookie to the client browser
+        -
+
+        
+        --------------
+        -
+        -
+
+
+
+### concepts: next js
+
+        -parallel routes: modal for login and auth (.) this symbol and @ for route intercpetion
+        -intercepting routes
+        -
+
+#### 14th octo 
+        logs
+                -accessed the backend and the frontend and created a route handler for auth... 
+                -
+        goals
+                -complete it
+                -do route interceptors
+                ..finish
+                
