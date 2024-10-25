@@ -1,7 +1,9 @@
 
 "use client"
 
+import { Link } from '@mui/material'
 import axios from 'axios'
+
 import React, { useEffect, useState } from 'react'
 
 function ProfilePage() {
@@ -31,6 +33,8 @@ function ProfilePage() {
         <>
             UserData: 
             {userData}
+
+            <Link href={"./login"}>Login</Link>
         </>
     )
 }

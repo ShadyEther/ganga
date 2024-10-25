@@ -34,3 +34,13 @@
                 -do route interceptors
                 ..finish
                 
+
+
+
+
+25th ---
+created separate components for auth 
+now u have to do a modal and put the auth components there..
+once the modal is done... u put the modal in the link for the login logout button .. 
+and once logged in it will do the avatara menu .. see anchoe el..
+anchor el prop of th menu in mui means anchor *el*ement

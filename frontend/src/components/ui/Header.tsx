@@ -1,5 +1,5 @@
-import { AppBar, Avatar, Box, TextField, Toolbar, Typography } from '@mui/material'
-import Link from 'next/link'
+import { AppBar, Avatar, Box,  IconButton,  Link,  Menu,  TextField, Toolbar, Typography } from '@mui/material'
+
 import React from 'react'
 
 function Header() {
@@ -16,11 +16,24 @@ function Header() {
 
             <Typography>Ganga</Typography>
             <TextField label="What do you want? 🔍"></TextField>
-            <Link href={'./user'}>
+            {/* <Link href={'./user'}>
             
             <Avatar/>
-            </Link>
+            </Link> */}
+            {/* <Link href={'./login'} color='secondary'>Login</Link> */}
             
+
+            <IconButton>
+
+              <Avatar/>
+
+            </IconButton>
+
+            <Menu
+              anchorEl={}
+            >
+
+            </Menu>
             </Box>
         </Toolbar>
     </AppBar>
